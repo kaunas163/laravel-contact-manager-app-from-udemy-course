@@ -24,6 +24,7 @@
         .contacts .contact {
             background: white;
             padding: 1em;
+            margin-bottom: 1em;
         }
         .contacts .contact p {
             margin-bottom: 0;
