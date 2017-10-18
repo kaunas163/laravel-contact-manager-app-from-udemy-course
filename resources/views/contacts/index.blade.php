@@ -22,7 +22,8 @@
     </div>
 
     <nav aria-label="Page navigation example">
-        {!! $contacts->links() !!}
+{{--        {!! $contacts->links() !!}--}}
+        {!! $contacts->appends(Request::query())->render() !!}
     </nav>
 
 @endsection

@@ -55,11 +55,17 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">All contacts <span class="badge badge-secondary">4</span></a>
-                    <a href="#" class="list-group-item list-group-item-action">Family <span class="badge badge-secondary">4</span></a>
-                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus <span class="badge badge-secondary">4</span></a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac <span class="badge badge-secondary">4</span></a>
-                    <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros <span class="badge badge-secondary">4</span></a>
+                    <?php $selected_group = Request::get('group_id'); ?>
+                    <a href="{{ route('contacts.index') }}" class="list-group-item {{ empty($selected_group) ? 'active' : '' }}">
+                        All contacts
+                        <span class="badge badge-secondary">{{ App\Contact::count() }}</span>
+                    </a>
+                    @foreach(App\Group::all() as $group)
+                        <a href="{{ route('contacts.index', ['group_id' => $group->id]) }}" class="list-group-item list-group-item-action {{ $selected_group == $group->id ? 'active' : '' }}">
+                            {{ $group->name }}
+                            <span class="badge badge-secondary">{{ $group->contacts->count() }}</span>
+                        </a>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-8">
