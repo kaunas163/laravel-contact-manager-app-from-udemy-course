@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
-                            <img src="http://placehold.it/100x100" alt="picture" class="img-thumbnail">
+                            <img src="http://placehold.it/100x100" alt="picture" class="img-thumbnail rounded-circle">
                         </div>
                         <br>
                         <label class="custom-file">

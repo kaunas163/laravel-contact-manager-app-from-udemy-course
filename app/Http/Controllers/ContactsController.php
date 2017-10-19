@@ -37,6 +37,10 @@ class ContactsController extends Controller
 
         $this->validate($request, $rules);
 
-        die('contact saved');
+        //die('contact saved');
+
+        Contact::create($request->all());
+
+        return redirect('contacts')->with('message', 'Contact saved!');
     }
 }

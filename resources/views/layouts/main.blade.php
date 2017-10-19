@@ -69,6 +69,11 @@
                 </div>
             </div>
             <div class="col-md-8">
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
                 @yield('content')
             </div>
         </div>
