@@ -7,6 +7,16 @@
             Add contact
         </div>
         <div class="card-body">
+            @if (count($errors))
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             {!! Form::open(['route' => 'contacts.store']) !!}
                 <div class="row">
                     <div class="col-md-8">

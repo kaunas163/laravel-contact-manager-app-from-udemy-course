@@ -26,4 +26,17 @@ class ContactsController extends Controller
     {
         return view('contacts.create');
     }
+
+    public function store(Request $request)
+    {
+        $rules = [
+            'name' => ['required', 'min:3'],
+            'company' => ['required'],
+            'email' => ['required', 'email']
+        ];
+
+        $this->validate($request, $rules);
+
+        die('contact saved');
+    }
 }
