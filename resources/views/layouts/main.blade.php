@@ -44,7 +44,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Add contact</a>
+                        <a class="nav-link" href="{{ route('contacts.create') }}">Add contact</a>
                     </li>
                 </ul>
             </div>

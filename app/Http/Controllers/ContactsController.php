@@ -21,4 +21,9 @@ class ContactsController extends Controller
         }
         return view('contacts.index', compact('contacts'));
     }
+
+    public function create()
+    {
+        return view('contacts.create');
+    }
 }
